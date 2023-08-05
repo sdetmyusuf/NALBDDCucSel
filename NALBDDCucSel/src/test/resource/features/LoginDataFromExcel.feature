@@ -9,6 +9,6 @@ Then check user navigates to my account page by passing username passwprd from e
 
  Examples:
  |row_index|
- |o|
  |1|
+ |2|
 
