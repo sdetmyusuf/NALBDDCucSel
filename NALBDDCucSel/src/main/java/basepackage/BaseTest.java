@@ -43,6 +43,7 @@ public class BaseTest {
 
 		isBrowserLaunched = true;
 
+		
 		return driver;
 
 	}

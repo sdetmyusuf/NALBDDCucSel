@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		features = "src/test/resource/features",
 		glue = {"steps","cuchooks"},
-		tags = "@all and not @regression and not @wip",
+		//tags = "@all and not @regression and not @wip",
 		//dryRun = true,
 		plugin = {"pretty", 
 				"html:target/CucumberReports/CucumberReport.html",
