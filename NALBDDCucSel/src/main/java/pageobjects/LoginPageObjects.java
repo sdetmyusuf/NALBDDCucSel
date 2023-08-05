@@ -53,7 +53,7 @@ public class LoginPageObjects {
 	}
 	
 	public void LoginToApp() {
-		
+		base.clickVisiblePElement(By.xpath("//span[@class=\"hidden-xs hidden-sm hidden-md\" and text()='My Account']"));
 	}
 
 }
