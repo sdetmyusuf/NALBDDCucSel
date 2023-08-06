@@ -43,7 +43,6 @@ public class BaseTest {
 
 		isBrowserLaunched = true;
 
-		
 		return driver;
 
 	}
@@ -192,8 +191,8 @@ public class BaseTest {
 	}
 
 	/*
-	 * -------------------------------------------------------------- 
-	 * getElements using String xpath, to return the elements list
+	 * -------------------------------------------------------------- getElements
+	 * using String xpath, to return the elements list
 	 * ---------------------------------------------------------------
 	 */
 	public List<WebElement> getElements(String xpath) {
@@ -201,33 +200,51 @@ public class BaseTest {
 
 		return listEle;
 	}
-	
+
 	/*
-	 * -------------------------------------------------------------- 
+	 * --------------------------------------------------------------
 	 * applyImplicitWait method to wait for a specific amount of time
 	 * ---------------------------------------------------------------
 	 */
 	public void applyImplicitWait(int time) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
 	}
-	
+
 	/*
-	 * -------------------------------------------------------------- 
+	 * --------------------------------------------------------------
 	 * applyImplicitWait method to wait for a specific amount of time
 	 * ---------------------------------------------------------------
 	 */
 	public boolean verifyIfElementPresent(By xpath, int time) {
-		
+
 		boolean flag = false;
 		applyImplicitWait(time);
 		try {
-		flag = driver.findElement(xpath).isDisplayed();
-		}catch(Exception e) {
+			flag = driver.findElement(xpath).isDisplayed();
+		} catch (Exception e) {
 			flag = false;
 		}
 		applyImplicitWait(time);
-		
+
 		return flag;
+	}
+
+	/*
+	 * --------------------------------------------------------------
+	 * applyImplicitWait method to wait for a specific amount of time
+	 * ---------------------------------------------------------------
+	 */
+	public WebElement dragDropElementPresent(By sourcexpath, By tarxpath) {
+		WebElement selement = null;
+		WebElement telement = null;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		selement = wait.until(ExpectedConditions.visibilityOf(driver.findElement(sourcexpath)));
+		telement = wait.until(ExpectedConditions.visibilityOf(driver.findElement(tarxpath)));
+		Actions action = new Actions(driver);
+
+		action.dragAndDrop(selement, telement).perform();
+
+		return selement;
 	}
 
 }
