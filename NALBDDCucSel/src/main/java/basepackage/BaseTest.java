@@ -107,7 +107,8 @@ public class BaseTest {
 		WebElement element = null;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(xpath)));
-
+		driver.findElement(xpath).click();
+		
 		return element;
 
 	}
@@ -248,6 +249,27 @@ public class BaseTest {
 		action.dragAndDrop(selement, telement).perform();
 
 		return selement;
+	}
+	
+	/*
+	 * --------------------------------------------------------------
+	 * sendTextToInputBox method to write some strings to input fields
+	 * ---------------------------------------------------------------
+	 */
+	
+	public  WebElement sendTextToInputBox(By xpath, String text) {
+		WebElement element = null;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		element = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+		
+		element.clear();
+		element.sendKeys(text);
+		
+		return element;
+	}
+	
+	public void scrollToPElement(WebElement element) {
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView()", element);
 	}
 
 }

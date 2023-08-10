@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		features = "src/test/resources/features",
 				//features = "@target/rerun.txt",
-		glue = {"stepdefs","cuchooks"},
+		glue = {"stepdefs","stepshelper"},
 		tags = "@testOne",
 		//tags = "@all and not @regression and not @wip",
 		//dryRun = true,

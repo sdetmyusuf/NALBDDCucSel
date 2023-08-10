@@ -20,21 +20,21 @@ public class LoginNALcuc {
 //		
 //		System.out.println(">>>>>> user_opens_the_applicattion_url");
 //	    }
+//
+//	@When("User enters email address {string}")
+//	public void user_enters_email_address(String emailadd) {
+//		System.out.println(">>>>>> user_enters_email_address ====>>> "+emailadd);   
+//	}
 
-	@When("User enters email address {string}")
-	public void user_enters_email_address(String emailadd) {
-		System.out.println(">>>>>> user_enters_email_address ====>>> "+emailadd);   
-	}
+//	@When("Enter valid password {string}")
+//	public void enter_valid_password(String password) {
+//		System.out.println(">>>>>> enter_valid_password===> "+password); 
+//	}
 
-	@When("Enter valid password {string}")
-	public void enter_valid_password(String password) {
-		System.out.println(">>>>>> enter_valid_password===> "+password); 
-	}
-
-	@When("clicks login button")
-	public void clicks_login_button() {
-		System.out.println(">>>>>> clicks_login_button");
-	}
+//	@When("clicks login button")
+//	public void clicks_login_button() {
+//		System.out.println(">>>>>> clicks_login_button");
+//	}
 
 	@Then("User should get logged in successfully")
 	public void user_should_get_logged_in_successfully() {

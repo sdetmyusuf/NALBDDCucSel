@@ -19,6 +19,7 @@ public class StepInitialization {
 	public void beforeMethod() {
 		base = new BaseTest();
 		loginp = new LoginPage(base);
+		loginPageObjs = new LoginPageObjects(base);
 	}
 
 }
