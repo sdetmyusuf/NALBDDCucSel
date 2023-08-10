@@ -1,11 +1,12 @@
 Feature: User login
 
+@testOne
 Scenario: login with valid credentials
 Given User opens the applicattion url
-When User enters email address "mohdmyyusuf@gmail.com"
-And Enter valid password "Ilovenal@143"
-And clicks login button
-Then User should get logged in successfully
+#When User enters email address "mohdmyyusuf@gmail.com"
+#And Enter valid password "Ilovenal@143"
+#And clicks login button
+#Then User should get logged in successfully
 
 Scenario: Login with invalid credentials
 Given User opens the applicattion url

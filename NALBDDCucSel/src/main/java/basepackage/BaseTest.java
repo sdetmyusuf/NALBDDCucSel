@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import fwutilities.PropertyFileReaderUtil;
+import io.cucumber.java.Scenario;
 
 public class BaseTest {
 
@@ -23,10 +24,12 @@ public class BaseTest {
 	PropertyFileReaderUtil propobj = new PropertyFileReaderUtil();
 	Properties prop = null;
 	private boolean isBrowserLaunched = false;
+	//Scenario scenario = null;
 
 	public BaseTest() {
 
 		launchBrowser();
+		//scenario = this.scenario;
 	}
 
 	public WebDriver launchBrowser() {
@@ -36,7 +39,7 @@ public class BaseTest {
 		driver = new ChromeDriver(chromeops);
 
 		prop = propobj.propFileReader(
-				"C:\\Users\\Mohd Yusuf\\eclipse-workspace\\NALBDDCucSel\\src\\main\\resource\\envconfig\\envdetails.properties");
+				"C:\\Users\\Mohd Yusuf\\codeRepository\\NALCucSelBDD\\NALBDDCucSel\\src\\main\\resources\\envconfig\\envdetails.properties");
 		String url = prop.getProperty("url");
 
 		driver.get(url);

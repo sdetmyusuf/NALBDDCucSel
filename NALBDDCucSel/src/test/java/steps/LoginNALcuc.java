@@ -15,11 +15,11 @@ public class LoginNALcuc {
 	
 	List<HashMap<String, String>> testData = new ArrayList<>();
 	
-	@Given("User opens the applicattion url")
-	public void user_opens_the_applicattion_url() {
-		
-		System.out.println(">>>>>> user_opens_the_applicattion_url");
-	    }
+//	@Given("User opens the applicattion url")
+//	public void user_opens_the_applicattion_url() {
+//		
+//		System.out.println(">>>>>> user_opens_the_applicattion_url");
+//	    }
 
 	@When("User enters email address {string}")
 	public void user_enters_email_address(String emailadd) {

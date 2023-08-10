@@ -14,16 +14,19 @@ public class LoginPageObjects {
 	Scenario scenario = null;
 	
 	ScreencaptureUtils screenstobj = new ScreencaptureUtils();
-
-	public LoginPageObjects(BaseTest base, Scenario scenario) {
+	//Scenario scenario
+	public LoginPageObjects(BaseTest base) {
 		this.base = base;
 		this.driver = base.driver;
-		this.scenario = scenario;
+		//this.scenario = scenario;
 		
-		if(!scenario.getSourceTagNames().contains("@NTE")) {
-			LoginToApp();
-		}
+//		if(!scenario.getSourceTagNames().contains("@NTE")) {
+//			LoginToApp();
+//		}
 	}
+
+
+
 
 	public void lverifyLogo() {
 		boolean logoPresent = driver.findElement(By.xpath("//*[@id=\"logo\"]/a/img")).isDisplayed();

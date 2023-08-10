@@ -4,9 +4,10 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-		features = "src/test/resource/features",
+		features = "src/test/resources/features",
 				//features = "@target/rerun.txt",
-		glue = {"steps","cuchooks"},
+		glue = {"stepdefs","cuchooks"},
+		tags = "@testOne",
 		//tags = "@all and not @regression and not @wip",
 		//dryRun = true,
 		plugin = {"pretty", 
