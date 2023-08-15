@@ -36,10 +36,10 @@ public class LoginNALcuc {
 //		System.out.println(">>>>>> clicks_login_button");
 //	}
 
-	@Then("User should get logged in successfully")
-	public void user_should_get_logged_in_successfully() {
-		System.out.println(">>>>>> user_should_get_logged_in_successfully");
-	}
+//	@Then("User should get logged in successfully")
+//	public void user_should_get_logged_in_successfully() {
+//		System.out.println(">>>>>> user_should_get_logged_in_successfully");
+//	}
 
 	@When("User enter invalid email address {string}")
 	public void user_enter_invalid_email_address(String invEmailAdd) {

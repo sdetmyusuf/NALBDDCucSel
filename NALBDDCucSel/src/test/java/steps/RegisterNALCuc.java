@@ -6,11 +6,11 @@ import io.cucumber.java.en.When;
 
 public class RegisterNALCuc {
 	
-	@When("User navigates to register account page")
-	public void user_navigates_to_register_account_page() {
-		System.out.println("User navigates to register account page");
-	}
-	
+//	@When("User navigates to register account page")
+//	public void user_navigates_to_register_account_page() {
+//		System.out.println("User navigates to register account page");
+//	}
+//	
 	@When("User enters first name {string} into first name field")
 	public void user_enters_first_name_into_first_name_field(String fname) {
 		System.out.println("User enters first name");
@@ -42,18 +42,18 @@ public class RegisterNALCuc {
 		System.out.println(">>>User enters password into confitm password field");
 		
 	}
-	@And("User clicks privacy policy field")
-	public void user_clicks_privacy_policy_field() {
-		System.out.println(">>>User clicks privacy policy field");
-		
-	}
+//	@And("User clicks privacy policy field")
+//	public void user_clicks_privacy_policy_field() {
+//		System.out.println(">>>User clicks privacy policy field");
+//		
+//	}
 	
 	
-	@And("User clicks on continue button")
-	public void user_clicks_on_continue_button() {
-		System.out.println(">>>User clicks on continue button");
-		
-	}
+//	@And("User clicks on continue button")
+//	public void user_clicks_on_continue_button() {
+//		System.out.println(">>>User clicks on continue button");
+//		
+//	}
 	
 	@And("Select yes for newsletter")
 	public void select_yes_for_newsletter() {
@@ -78,11 +78,11 @@ public class RegisterNALCuc {
 		
 	}
 	
-	@Then("Account should be created")
-	public void account_should_be_created() {
-		System.out.println(">>>Account should be created");
-		
-	}
+//	@Then("Account should be created")
+//	public void account_should_be_created() {
+//		System.out.println(">>>Account should be created");
+//		
+//	}
 	
 	
 	

@@ -45,9 +45,7 @@ public class LoginPageObjects {
 		driver.findElement(By.xpath("(//a[contains(text(), 'Login')])[1]")).click();
 	}
 
-	public void lclickRegisterOption() {
-		driver.findElement(By.xpath("(//a[contains(text(), 'Register')])[1]")).click();
-	}
+	
 
 	public void lclickWishlist() {
 		driver.findElement(

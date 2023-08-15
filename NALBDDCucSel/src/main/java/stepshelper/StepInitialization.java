@@ -20,6 +20,7 @@ public class StepInitialization {
 		base = new BaseTest();
 		loginp = new LoginPage(base);
 		loginPageObjs = new LoginPageObjects(base);
+		registerPageObjs = new RegisterPageObjects(base);
 	}
 
 }
