@@ -1,5 +1,6 @@
 package stepdefs;
 
+import java.util.List;
 import java.util.Map;
 
 import basepackage.BaseTest;
@@ -49,9 +50,12 @@ public class RegisterPageSteps {
 			
 		}
 		
-		@Then("Account should be created")
-		public void account_should_be_created() {
-			System.out.println(">>>Account should be created");
+		@Then("Account should be created with the message")
+		public void account_should_be_created(DataTable datatable) {
+			List<String> map = datatable.asList();
+			String errorExpe = map.get(0);
+			//String errorExpe = map.get("message");
+			registerPage.checkMessage(errorExpe);
 			
 		}
 		

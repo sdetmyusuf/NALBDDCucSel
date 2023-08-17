@@ -31,7 +31,8 @@ public class BaseTest {
 
 		launchBrowser();
 		//scenario = this.scenario;
-		//PageFactory.initElements(driver, this);
+		//
+		PageFactory.initElements(driver, this);
 	}
 
 	public WebDriver launchBrowser() {
@@ -41,7 +42,7 @@ public class BaseTest {
 		driver = new ChromeDriver(chromeops);
 
 		prop = propobj.propFileReader(
-				"C:\\Users\\Mohd Yusuf\\codeRepository\\NALCucSelBDD\\NALBDDCucSel\\src\\main\\resources\\envconfig\\envdetails.properties");
+				System.getProperty("user.dir")+"\\src\\main\\resources\\envconfig\\envdetails.properties");
 		String url = prop.getProperty("url");
 
 		driver.get(url);
@@ -110,6 +111,21 @@ public class BaseTest {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(xpath)));
 		driver.findElement(xpath).click();
+		
+		return element;
+
+	}
+	
+	/*
+	 * --------------------------------------------------------------
+	 * clickVisiblePElement method using By xpath  JSExcutor version, to return the element
+	 * ---------------------------------------------------------------
+	 */
+	public WebElement clickVisiblePElementJSE(By xpath) {
+		WebElement element = null;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(xpath)));
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 		
 		return element;
 
@@ -273,5 +289,20 @@ public class BaseTest {
 	public void scrollToPElement(WebElement element) {
 		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView()", element);
 	}
+	
+	/*
+	 * --------------------------------------------------------------
+	 * getElementText method to get text in the form of  strings to input fields
+	 * ---------------------------------------------------------------
+	 */
+	
+	public String getElementText(By xpath) {
+		String text = null;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		text = wait.until(ExpectedConditions.visibilityOf(driver.findElement(xpath))).getText();
+		return text;
+	}
+	
+	
 
 }

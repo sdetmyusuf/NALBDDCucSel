@@ -1,9 +1,9 @@
 Feature: User login
 
-@testOne
+@testOne @login
 Scenario: login with valid credentials
 #Given User opens the applicattion url
-When User enters email address "mohdmyyusuf@gmail.com"
+When User enters email address "sdetmyusuf1@gmail.com"
 And Enter valid password "Ilovenal@143"
 And clicks login button
 Then User should get logged in successfully

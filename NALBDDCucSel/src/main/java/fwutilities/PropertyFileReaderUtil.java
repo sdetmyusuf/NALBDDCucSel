@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyFileReaderUtil {
+	
+	public void sysPathGetter() {
+		String prop = System.getProperty("user.dir");
+		System.out.println(prop);
+		
+	}
 
 	public Properties propFileReader(String filePath) {
 
@@ -26,6 +32,10 @@ public class PropertyFileReaderUtil {
 
 		return prop;
 
+	}
+	
+	public static void main(String[] args) {
+		new PropertyFileReaderUtil().sysPathGetter();
 	}
 
 }

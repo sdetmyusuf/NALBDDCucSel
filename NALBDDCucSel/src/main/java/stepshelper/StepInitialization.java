@@ -6,11 +6,13 @@ import io.cucumber.java.Scenario;
 import pageobjects.LoginPage;
 import pageobjects.LoginPageObjects;
 import pageobjects.RegisterPageObjects;
+import pageobjects.VegPurchaseObjects;
 
 public class StepInitialization {
 
 	public static LoginPageObjects loginPageObjs = null;
 	public static RegisterPageObjects registerPageObjs = null;
+	public static VegPurchaseObjects vegpurchaseObjects = null;
 	public static LoginPage loginp = null;
 	public static BaseTest base = null;
 	public static Scenario scenario = null;
@@ -21,6 +23,7 @@ public class StepInitialization {
 		loginp = new LoginPage(base);
 		loginPageObjs = new LoginPageObjects(base);
 		registerPageObjs = new RegisterPageObjects(base);
+		vegpurchaseObjects = new VegPurchaseObjects(base);
 	}
 
 }
