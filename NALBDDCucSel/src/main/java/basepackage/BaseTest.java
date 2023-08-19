@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -25,24 +27,41 @@ public class BaseTest {
 	PropertyFileReaderUtil propobj = new PropertyFileReaderUtil();
 	Properties prop = null;
 	private boolean isBrowserLaunched = false;
-	//Scenario scenario = null;
+	// Scenario scenario = null;
 
 	public BaseTest() {
-
-		launchBrowser();
-		//scenario = this.scenario;
+		
+		prop = propobj.propFileReader(
+				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\envdetails.properties");
+		String browser = prop.getProperty("browser");
+		launchBrowser(browser);
+		// scenario = this.scenario;
 		//
 		PageFactory.initElements(driver, this);
 	}
 
-	public WebDriver launchBrowser() {
-		ChromeOptions chromeops = new ChromeOptions();
-		chromeops.addArguments("--remote-allow-orogins=*");
-		chromeops.addArguments("start-maximized");
-		driver = new ChromeDriver(chromeops);
-
+	public WebDriver launchBrowser(String browser) {
 		prop = propobj.propFileReader(
-				System.getProperty("user.dir")+"\\src\\main\\resources\\envconfig\\envdetails.properties");
+				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\envdetails.properties");
+		browser = prop.getProperty("browser");
+
+		switch (browser) {
+		case "chrome":
+			ChromeOptions chromeops = new ChromeOptions();
+			chromeops.addArguments("--remote-allow-orogins=*");
+			chromeops.addArguments("start-maximized");
+			driver = new ChromeDriver(chromeops);
+			break;
+		case "edge":
+			EdgeOptions edgeoptions = new EdgeOptions();
+			edgeoptions.addArguments("--remote-allow-orogins=*");
+			edgeoptions.addArguments("start-maximized");
+			driver = new EdgeDriver(edgeoptions);
+			break;
+			default:
+				System.out.println("No browser");
+		}
+
 		String url = prop.getProperty("url");
 
 		driver.get(url);
@@ -111,22 +130,22 @@ public class BaseTest {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(xpath)));
 		driver.findElement(xpath).click();
-		
+
 		return element;
 
 	}
-	
+
 	/*
 	 * --------------------------------------------------------------
-	 * clickVisiblePElement method using By xpath  JSExcutor version, to return the element
-	 * ---------------------------------------------------------------
+	 * clickVisiblePElement method using By xpath JSExcutor version, to return the
+	 * element ---------------------------------------------------------------
 	 */
 	public WebElement clickVisiblePElementJSE(By xpath) {
 		WebElement element = null;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(xpath)));
-		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-		
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
 		return element;
 
 	}
@@ -268,41 +287,39 @@ public class BaseTest {
 
 		return selement;
 	}
-	
+
 	/*
 	 * --------------------------------------------------------------
 	 * sendTextToInputBox method to write some strings to input fields
 	 * ---------------------------------------------------------------
 	 */
-	
-	public  WebElement sendTextToInputBox(By xpath, String text) {
+
+	public WebElement sendTextToInputBox(By xpath, String text) {
 		WebElement element = null;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		element = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
-		
+
 		element.clear();
 		element.sendKeys(text);
-		
+
 		return element;
 	}
-	
+
 	public void scrollToPElement(WebElement element) {
-		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView()", element);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
 	}
-	
+
 	/*
-	 * --------------------------------------------------------------
-	 * getElementText method to get text in the form of  strings to input fields
+	 * -------------------------------------------------------------- getElementText
+	 * method to get text in the form of strings to input fields
 	 * ---------------------------------------------------------------
 	 */
-	
+
 	public String getElementText(By xpath) {
 		String text = null;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		text = wait.until(ExpectedConditions.visibilityOf(driver.findElement(xpath))).getText();
 		return text;
 	}
-	
-	
 
 }

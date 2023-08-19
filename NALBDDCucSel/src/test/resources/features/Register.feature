@@ -6,7 +6,7 @@ Given User navigates to register account page
 When User enters the values in all mandatory fields
 |fname|yusuf|
 |lname|khan|
-|emailaddress | sdetmyusuf4@gmail.com|
+|emailaddress | sdetmyusuf6@gmail.com|
 |telephone | 1901234444|
 |password |Ilovenal@143|
 And User clicks privacy policy field

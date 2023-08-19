@@ -131,7 +131,9 @@
 						<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
-					</configuration>
+					<!--	<parallel>methods</parallel>
+						<useUnlimitedThreads>true</useUnlimitedThreads> -->
+					</configuration> 
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>

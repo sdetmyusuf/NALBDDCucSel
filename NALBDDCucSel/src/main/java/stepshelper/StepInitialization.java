@@ -3,6 +3,7 @@ package stepshelper;
 import basepackage.BaseTest;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import pageobjects.CartPageObjects;
 import pageobjects.LoginPage;
 import pageobjects.LoginPageObjects;
 import pageobjects.RegisterPageObjects;
@@ -16,6 +17,7 @@ public class StepInitialization {
 	public static LoginPage loginp = null;
 	public static BaseTest base = null;
 	public static Scenario scenario = null;
+	public static CartPageObjects cartPageObj = null;
 
 	@Before
 	public void beforeMethod() {
@@ -24,6 +26,7 @@ public class StepInitialization {
 		loginPageObjs = new LoginPageObjects(base);
 		registerPageObjs = new RegisterPageObjects(base);
 		vegpurchaseObjects = new VegPurchaseObjects(base);
+		cartPageObj = new CartPageObjects(base);
 	}
 
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import basepackage.BaseTest;
+import common.EndPoint;
 import fwutilities.ScreencaptureUtils;
 import io.cucumber.java.Scenario;
 
@@ -24,11 +25,13 @@ public class VegPurchaseObjects {
 	String vegName = "//h4[contains(text(), '%s')]";
 	String inputQuant = "//h4[contains(text(), '%s')]//following-sibling::div//input";
 	String addtocart = "//h4[contains(text(), '%s')]//following-sibling::div//button";
+	String env =System.getProperty(String.valueOf(EndPoint.STORE));
 	
 	public void vegNameGetter(String inputVegname) {
 		
 		base.scrollToPElement(driver.findElement(By.xpath(String.format(vegName, inputVegname))));
 		base.verifyIfElementPresent(By.xpath(String.format(vegName, inputVegname)), 15);
+		System.out.println(env);
 		
 	}
 	
