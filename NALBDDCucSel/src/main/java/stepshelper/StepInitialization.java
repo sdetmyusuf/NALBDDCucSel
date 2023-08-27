@@ -7,6 +7,7 @@ import pageobjects.CartPageObjects;
 import pageobjects.LoginPage;
 import pageobjects.LoginPageObjects;
 import pageobjects.RegisterPageObjects;
+import pageobjects.SubmitOpderObjects;
 import pageobjects.VegPurchaseObjects;
 
 public class StepInitialization {
@@ -18,6 +19,7 @@ public class StepInitialization {
 	public static BaseTest base = null;
 	public static Scenario scenario = null;
 	public static CartPageObjects cartPageObj = null;
+	public static SubmitOpderObjects submitOpderObjects = null;
 
 	@Before
 	public void beforeMethod() {
@@ -27,6 +29,7 @@ public class StepInitialization {
 		registerPageObjs = new RegisterPageObjects(base);
 		vegpurchaseObjects = new VegPurchaseObjects(base);
 		cartPageObj = new CartPageObjects(base);
+		submitOpderObjects = new SubmitOpderObjects(base);
 	}
 
 }

@@ -34,6 +34,15 @@ public class SubmitOpderObjects {
 		return numOfRows;
 	}
 	
+	public boolean verifyCartPage(String pagefractn) {
+		String pageTitle = base.getCurrentPageTitle();
+		System.out.println("User is on >> "+pageTitle+" page");
+		if ((base.getCurrentPageUrl()).contains(pagefractn)) {
+			return true;
+		}
+		return false;
+		
+	}
 	
 	
 	

@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 		features = "src/test/resources/features",
 		//features = {"C:\\Users\\Mohd Yusuf\\codeRepository\\NALCucSelBDD\\NALBDDCucSel\\src\\test\\resources\\features\\VegetablePurchase.feature", "C:\\Users\\Mohd Yusuf\\codeRepository\\NALCucSelBDD\\NALBDDCucSel\\src\\test\\resources\\features\\VegetableCart.feature"},
 				//features = "@target/rerun.txt",
-		glue = {"stepdefs","stepshelper"},
+		glue = {"stepdefs","stepshelper", "cuchooks"},
 		//tags = "@vegpurchase",
 		tags = "@vegpurchase",
 		//tags = "@all and not @regression and not @wip",

@@ -11,5 +11,15 @@ Then user checks quantity to be correct on the cart
 Then user checks total to be correct on the cart
 |112|
 Then user clicks checkout button
-
-
+Given user is on cart item list page
+|pagename|
+|cart|
+When user checks the vegetable to be the same as ordered
+|Vegname|Items|
+|Carrot - 1 Kg|1|
+Then user checks quantity to be correct same as ordered
+|quantity|
+|2|
+Then user checks total to be correct same as ordered
+|total|
+|112|

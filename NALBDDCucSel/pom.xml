@@ -57,6 +57,15 @@
 			<version>7.13.0</version>
 		</dependency>
 
+		<!--
+		https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>7.13.0</version>
+		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -131,9 +140,9 @@
 						<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
-					<!--	<parallel>methods</parallel>
+						<!--	<parallel>methods</parallel>
 						<useUnlimitedThreads>true</useUnlimitedThreads> -->
-					</configuration> 
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>

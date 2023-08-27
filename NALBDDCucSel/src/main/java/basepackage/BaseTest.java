@@ -321,5 +321,21 @@ public class BaseTest {
 		text = wait.until(ExpectedConditions.visibilityOf(driver.findElement(xpath))).getText();
 		return text;
 	}
+	public String getCurrentPageUrl() {
+		String url = null;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		url = driver.getCurrentUrl();
+		
+		return url;
+	}
+	
+	public String getCurrentPageTitle() {
+		String title = null;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//wait.until(ExpectedConditions.urlContains(urlfractn));
+		title = driver.getTitle();
+		
+		return title;
+	}
 
 }
