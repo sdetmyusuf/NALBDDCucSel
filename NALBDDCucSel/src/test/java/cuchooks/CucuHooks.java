@@ -8,6 +8,7 @@ import io.cucumber.java.Scenario;
 public class CucuHooks {
 	TestContext context;
 	
+	
 	public CucuHooks(TestContext context) {
 		this.context = context;
 	}
@@ -18,6 +19,8 @@ public class CucuHooks {
 		System.out.println(">>>>>> Execution of the scenario - " + scenario.getName() + " has been started ");
 		System.out.println(">>>>>> Set up before hook");
 		System.out.println(scenario.getName() + " is executed and it is - " + scenario.getStatus());
+		
+		
 	}
 
 	@After

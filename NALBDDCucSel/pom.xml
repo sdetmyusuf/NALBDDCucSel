@@ -15,8 +15,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -34,7 +34,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.8.0</version>
-			<scope>test</scope>
+			<!-- <scope>test</scope>-->
 		</dependency>
 
 		<dependency>
@@ -105,6 +105,13 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.13.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>5.3.1</version>
+			<scope>compile</scope>
+		</dependency>
 
 
 	</dependencies>
@@ -137,9 +144,9 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.1.2</version>
 					<configuration>
-						<suiteXmlFiles>
+						<!--<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
-						</suiteXmlFiles>
+						</suiteXmlFiles>-->
 						<!--	<parallel>methods</parallel>
 						<useUnlimitedThreads>true</useUnlimitedThreads> -->
 					</configuration>
