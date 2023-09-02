@@ -1,5 +1,5 @@
 Feature: Check the cart after the vegetable is added to it
-@vegpurchase
+@vegpurchase2
 Scenario: Check if the cart contains the correct vegetable
 Given user clicks on cart icon and checks if empty
 |Carrot - 1 Kg|
