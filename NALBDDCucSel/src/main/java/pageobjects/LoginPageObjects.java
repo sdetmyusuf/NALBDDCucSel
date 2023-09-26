@@ -1,7 +1,13 @@
 package pageobjects;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import basepackage.BaseTest;
 import fwutilities.ScreencaptureUtils;
@@ -14,7 +20,7 @@ public class LoginPageObjects {
 	Scenario scenario = null;
 	
 	ScreencaptureUtils screenstobj = new ScreencaptureUtils();
-	//Scenario scenario
+	
 	public LoginPageObjects(BaseTest base) {
 		this.base = base;
 		this.driver = base.driver;
@@ -29,6 +35,7 @@ public class LoginPageObjects {
 
 
 	public void lverifyLogo() {
+		
 		boolean logoPresent = driver.findElement(By.xpath("//*[@id=\"logo\"]/a/img")).isDisplayed();
 		if (logoPresent) {
 			System.out.println("We are login page, logon is there with text");

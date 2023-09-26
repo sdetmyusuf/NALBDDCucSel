@@ -23,6 +23,7 @@ public class LoginPageSteps {
 	
 	@When("User enters email address {string}")
 	public void user_enters_email_address(String emailadd) {
+		loginpage.lverifyLogo();
 		loginpage.lclickMyAccount();
 		loginpage.lclickLoginOption();
 		base.sendTextToInputBox(By.xpath("//*[@id=\"input-email\"]"), emailadd);

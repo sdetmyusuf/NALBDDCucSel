@@ -1,5 +1,6 @@
 Feature: Login with excel sheet
 
+@datafromxl
 Scenario Outline: Login data from excel
 Given User launches browser
 And opens url ""

@@ -6,6 +6,7 @@ import io.cucumber.java.Scenario;
 import pageobjects.CartPageObjects;
 import pageobjects.LoginPage;
 import pageobjects.LoginPageObjects;
+import pageobjects.ProjectSearchObjects;
 import pageobjects.RegisterPageObjects;
 import pageobjects.SubmitOpderObjects;
 import pageobjects.VegPurchaseObjects;
@@ -20,6 +21,7 @@ public class StepInitialization {
 	public static Scenario scenario = null;
 	public static CartPageObjects cartPageObj = null;
 	public static SubmitOpderObjects submitOpderObjects = null;
+	public static ProjectSearchObjects productSearchObjs = null;
 
 	@Before
 	public void beforeMethod() {
@@ -30,6 +32,8 @@ public class StepInitialization {
 		vegpurchaseObjects = new VegPurchaseObjects(base);
 		cartPageObj = new CartPageObjects(base);
 		submitOpderObjects = new SubmitOpderObjects(base);
+		productSearchObjs = new ProjectSearchObjects(base);
+		
 	}
 
 }

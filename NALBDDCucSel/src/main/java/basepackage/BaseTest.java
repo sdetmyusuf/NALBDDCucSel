@@ -35,9 +35,7 @@ public class BaseTest {
 				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\envdetails.properties");
 		String browser = prop.getProperty("browser");
 		launchBrowser(browser);
-		// scenario = this.scenario;
-		//
-		PageFactory.initElements(driver, this);
+		//PageFactory.initElements(driver, this);
 	}
 
 	public WebDriver launchBrowser(String browser) {
@@ -47,16 +45,21 @@ public class BaseTest {
 
 		switch (browser) {
 		case "chrome":
+			String chromepath = System.getProperty("user.dir")+"\\src\\main\\resources\\drivers\\chrome\\chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver", chromepath);
 			ChromeOptions chromeops = new ChromeOptions();
+			chromeops.setBinary("C:\\Users\\Mohd Yusuf\\Downloads\\chrome-win64\\chrome-win64\\chrome.exe");
 			chromeops.addArguments("--remote-allow-orogins=*");
 			chromeops.addArguments("start-maximized");
 			driver = new ChromeDriver(chromeops);
+			//driver.manage().window().fullscreen();
 			break;
 		case "edge":
 			EdgeOptions edgeoptions = new EdgeOptions();
 			edgeoptions.addArguments("--remote-allow-orogins=*");
 			edgeoptions.addArguments("start-maximized");
 			driver = new EdgeDriver(edgeoptions);
+			//driver.manage().window().fullscreen();
 			break;
 			default:
 				System.out.println("No browser");
@@ -236,8 +239,8 @@ public class BaseTest {
 	 * using String xpath, to return the elements list
 	 * ---------------------------------------------------------------
 	 */
-	public List<WebElement> getElements(String xpath) {
-		List<WebElement> listEle = driver.findElements(By.xpath(xpath));
+	public List<WebElement> getElements(By xpath) {
+		List<WebElement> listEle = driver.findElements(xpath);
 
 		return listEle;
 	}
@@ -305,7 +308,8 @@ public class BaseTest {
 		return element;
 	}
 
-	public void scrollToPElement(WebElement element) {
+	public void scrollToPElement(By xpath) {
+		WebElement element = driver.findElement(xpath);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
 	}
 
