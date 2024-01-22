@@ -16,17 +16,20 @@ public class LoginPageSteps {
 	//Scenario scenario = null;
 	BaseTest base = StepInitialization.base;
 	LoginPageObjects loginpage = StepInitialization.loginPageObjs;
-	
-	
-	
-	
+	By emailinput = By.xpath("//*[@id='input-email']");
+	By gmailemailinbox = By.xpath("//*[@id='identifierId']");
+	By gamilnextbtn = By.xpath("//*[@id='identifierNext']//span[contains(text(), 'Next')]");
+	By nalpassword = By.xpath("//*[@id=\"input-password\"]");
+	By gmailpwd = By.xpath("//*[@id='password']//input[@type = 'password']");
+	By loginBtnnal = By.xpath("//input[@type='submit']");
+	By loginBtngmail = By.xpath("//*[@id='passwordNext']//span");
 	
 	@When("User enters email address {string}")
 	public void user_enters_email_address(String emailadd) {
-		loginpage.lverifyLogo();
-		loginpage.lclickMyAccount();
-		loginpage.lclickLoginOption();
-		base.sendTextToInputBox(By.xpath("//*[@id=\"input-email\"]"), emailadd);
+//		loginpage.lverifyLogo();
+//		loginpage.lclickMyAccount();
+//		loginpage.lclickLoginOption();
+		base.sendTextToInputBox(gmailemailinbox, emailadd);
 		
 		System.out.println(">>>>>> user_opens_the_applicattion_url");  
 	}
@@ -35,16 +38,16 @@ public class LoginPageSteps {
 	@When("Enter valid password {string}")
 	public void enter_valid_password(String password) {
 		
-		base.sendTextToInputBox(By.xpath("//*[@id=\"input-password\"]"), password);
+		base.sendTextToInputBox(gmailpwd, password);
 		System.out.println(">>>>>> enter_valid_password===> "+password); 
 	}
 	
 	
 	@When("clicks login button")
 	public void clicks_login_button() {
-		WebElement element = base.driver.findElement(By.xpath("//input[@type='submit']"));
-		base.scrollToPElement(element);
-		base.clickVisiblePElement(By.xpath("//input[@type='submit']"));
+		//WebElement element = base.driver.findElement(By.xpath("//input[@type='submit']"));
+		base.scrollToPElement(loginBtngmail);
+		base.clickVisiblePElement(loginBtngmail);
 		System.out.println(">>>>>> clicks_login_button");
 	}
 	

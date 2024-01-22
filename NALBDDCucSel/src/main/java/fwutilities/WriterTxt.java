@@ -22,8 +22,7 @@ public class WriterTxt {
 					int num = (int) (Math.random()*100);
 					
 					bw.write(num+",");
-					
-					System.out.println("C:\\Users\\Mohd Yusuf\\ACNR\\ContainerNum_dataset\\ContainerNum_dataset\\test_images");
+				
 					
 				}
 			}
@@ -39,7 +38,9 @@ public class WriterTxt {
 	}
 	
 	public static void main(String[] args) {
-		WriterTxt.writeInFile("C:\\Users\\Mohd Yusuf\\codeRepository\\NALCucSelBDD\\NALBDDCucSel\\src\\main\\resources\\TestRecord.csv", "Data to be tested");
+		String path = System.getProperty("user.dir");
+		
+		WriterTxt.writeInFile(path+"\\src\\main\\resources\\TestRecord.csv", "Data to be tested");
 	}
 
 }

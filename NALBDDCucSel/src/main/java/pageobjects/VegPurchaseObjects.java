@@ -29,19 +29,19 @@ public class VegPurchaseObjects {
 	
 	public void vegNameGetter(String inputVegname) {
 		
-		base.scrollToPElement(driver.findElement(By.xpath(String.format(vegName, inputVegname))));
+		base.scrollToPElement(By.xpath(String.format(vegName, inputVegname)));
 		base.verifyIfElementPresent(By.xpath(String.format(vegName, inputVegname)), 15);
 		System.out.println(env);
 		
 	}
 	
 	public void enterQunatity(String inputVegname, String qunat) {
-		base.scrollToPElement(driver.findElement(By.xpath(String.format(inputQuant, inputVegname))));
+		base.scrollToPElement(By.xpath(String.format(inputQuant, inputVegname)));
 		base.sendTextToInputBox(By.xpath(String.format(inputQuant, inputVegname)), qunat);
 	}
 	
 	public void clickAddtoCart(String inputVegname) {
-		base.scrollToPElement(driver.findElement(By.xpath(String.format(addtocart, inputVegname))));
+		base.scrollToPElement(By.xpath(String.format(addtocart, inputVegname)));
 		try {
 			Thread.sleep(10000);
 		} catch (InterruptedException e) {
