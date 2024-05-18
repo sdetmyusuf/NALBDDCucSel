@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import basepackage.BaseTest;
+import extentreports.ExtentReportEngine;
 import fwutilities.ScreencaptureUtils;
 import io.cucumber.java.Scenario;
 import stepshelper.StepInitialization;
@@ -26,6 +27,7 @@ public class MpThreesPageObjects {
 	Scenario scenario = null;
 	MpThreesPageObjects mpThreesPageObjects = StepInitialization.mpThreesPageObjects;
 	ScreencaptureUtils screenstobj = new ScreencaptureUtils();
+	ExtentReportEngine er = new ExtentReportEngine();
 	public static Logger log = LoggerFactory.getLogger(MpThreesPageObjects.class);
 
 	// Scenario scenario
@@ -49,6 +51,8 @@ public class MpThreesPageObjects {
 		log.info("hovering the mpthreelink");
 		base.clickVisiblePElementWE(mpthreepath);
 		log.info("Clicking the mpthreelink");
+		er.extentReportSetUp();
+		
 	}
 	
 	public void clickMp3Name(String mp3name) {

@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -39,7 +40,7 @@ public class BaseTest {
 	public BaseTest() {
 
 		prop = propobj.propFileReader(
-				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\envdetails.properties");
+				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\QA_config.properties");
 		String browser = prop.getProperty("browser");
 		launchBrowser(browser);
 		// PageFactory.initElements(driver, this);
@@ -47,7 +48,7 @@ public class BaseTest {
 
 	public WebDriver launchBrowser(String browser) {
 		prop = propobj.propFileReader(
-				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\envdetails.properties");
+				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\QA_config.properties");
 		browser = prop.getProperty("browser");
 
 		switch (browser) {
@@ -71,7 +72,7 @@ public class BaseTest {
 			System.out.println("No browser");
 		}
 
-		String url = prop.getProperty("url");
+		String url = prop.getProperty("baseUrl");
 
 		driver.get(url);
 		log.info("Launching the "+browser+" browser");
@@ -335,6 +336,20 @@ public class BaseTest {
 
 		return element;
 	}
+	
+	/*---------------------------------------------------------------------------------
+	 * sendTextToInputBox method to write some strings to input fields
+	 * -------------------------------------------------------------------------------*/
+	public WebElement sendTextToInputBoxwe(WebElement element, String text) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		element = wait.until(ExpectedConditions.visibilityOf(element));
+
+		element.clear();
+		element.sendKeys(text);
+
+		return element;
+	}
+
 
 	public void scrollToPElement(By xpath) {
 		WebElement element = driver.findElement(xpath);
@@ -366,6 +381,19 @@ public class BaseTest {
 		title = driver.getTitle();
 
 		return title;
+	}
+	
+	public WebElement pressEnterKey (By xpath) {
+		
+		WebElement element = null;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		element = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+
+		element.clear();
+		element.sendKeys(Keys.RETURN);
+
+		return element;
+		
 	}
 
 }

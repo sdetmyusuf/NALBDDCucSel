@@ -1,4 +1,6 @@
+@TestMpthree
 Feature: purchasing mp3
+
 
 Scenario Outline: User selects and purchases the mp3
 

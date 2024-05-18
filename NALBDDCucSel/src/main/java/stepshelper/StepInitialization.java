@@ -4,12 +4,14 @@ import apis.UserApis;
 import basepackage.BaseTest;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import pageobjects.AORegister;
 import pageobjects.CartPageObjects;
 import pageobjects.GmailInboxObjects;
 import pageobjects.LoginPage;
 import pageobjects.LoginPageObjects;
 import pageobjects.MpThreesPageObjects;
 import pageobjects.ProjectSearchObjects;
+import pageobjects.PurchaseStoreWise;
 import pageobjects.RegisterPageObjects;
 import pageobjects.SubmitOpderObjects;
 import pageobjects.VegPurchaseObjects;
@@ -29,6 +31,8 @@ public class StepInitialization {
 	public static MpThreesPageObjects mpThreesPageObjects =null;
 	public static GmailInboxObjects gmailInboxObjects = null;
 	public static UserApis userApis = null;
+	public static PurchaseStoreWise purchaseStoreWise = null;
+	public static AORegister aORegister = null;
 
 	@Before
 	public void beforeMethod() {
@@ -43,6 +47,8 @@ public class StepInitialization {
 		mpThreesPageObjects = new MpThreesPageObjects(base);
 		gmailInboxObjects = new GmailInboxObjects(base);
 		userApis = new UserApis();
+		purchaseStoreWise = new PurchaseStoreWise(base);
+		aORegister = new AORegister(base);
 	}
 
 }

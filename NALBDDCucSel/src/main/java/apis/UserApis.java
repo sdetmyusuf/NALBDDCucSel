@@ -48,7 +48,7 @@ public class UserApis {
 		
 		System.out.println("id id ======>"+id);
 
-		given().when().get("https://reqres.in/api/users/2").then().statusCode(200).body("id", equalTo(2)).log()
+		given().when().get("https://reqres.in/api/users/2").then().statusCode(200).body("id", equalTo(137)).log()
 		.all();
 	}
 }
