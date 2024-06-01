@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 		//tags = "@vegpurchase",
 		//tags = "@vegpurchase",
 		//tags = "@TestMpthree",
-		tags	=	"@AORegister",
+		tags	=	"@brokenLinks",
 		//tags = "@login",
 		//tags = "@all and not @regression and not @wip",
 		//dryRun = true,

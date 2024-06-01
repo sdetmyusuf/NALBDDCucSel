@@ -1,10 +1,12 @@
 package stepshelper;
 
+import apis.BooksApis;
 import apis.UserApis;
 import basepackage.BaseTest;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import pageobjects.AORegister;
+import pageobjects.BrokenLinksChecker;
 import pageobjects.CartPageObjects;
 import pageobjects.GmailInboxObjects;
 import pageobjects.LoginPage;
@@ -33,6 +35,8 @@ public class StepInitialization {
 	public static UserApis userApis = null;
 	public static PurchaseStoreWise purchaseStoreWise = null;
 	public static AORegister aORegister = null;
+	public static BooksApis booksApis = null;
+	public static BrokenLinksChecker brokenLinksChecker = null;
 
 	@Before
 	public void beforeMethod() {
@@ -49,6 +53,8 @@ public class StepInitialization {
 		userApis = new UserApis();
 		purchaseStoreWise = new PurchaseStoreWise(base);
 		aORegister = new AORegister(base);
+		booksApis = new BooksApis();
+		brokenLinksChecker = new BrokenLinksChecker(base);
 	}
 
 }

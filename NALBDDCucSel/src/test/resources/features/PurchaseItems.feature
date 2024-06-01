@@ -9,7 +9,6 @@ When user searches the "<product name>"
 Then user is able to see "<product name>" enlisted there.
  
 
-
 Examples:
 |Store name|product name|
 |Store|Basic Blue Jeans|
