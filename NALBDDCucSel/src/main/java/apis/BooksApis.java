@@ -12,11 +12,14 @@ public class BooksApis {
 	
 
 	public int statsCode;
-	;public String responceAsString;
+	public String responceAsString;
 
 	public void getBooks () {
+		//Set the base uri using RA
 		RestAssured.baseURI = "https://demoqa.com/BookStore/v1/Books";
+		//Now set the request specifications
 		RequestSpecification httpRequest = RestAssured.given(); 
+		
 		Response response = httpRequest.request(Method.GET, "");
 		
 		System.out.println("Status received => " + response.getStatusLine()); 

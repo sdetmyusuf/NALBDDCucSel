@@ -51,4 +51,18 @@ public class UserApis {
 		given().when().get("https://reqres.in/api/users/2").then().statusCode(200).body("id", equalTo(137)).log()
 		.all();
 	}
+	
+	
+	public void createUsersForTest() {
+
+		HashMap data = new HashMap();
+		data.put("name", "yusuf");
+		data.put("job", "engg");
+
+		 id = given().contentType("application/json").body(data).when().post("/api/users/register")
+				.jsonPath().getInt("id");
+		
+		System.out.println("Created user id===>"+id);
+
+	}
 }

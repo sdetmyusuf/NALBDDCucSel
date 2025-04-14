@@ -47,9 +47,9 @@ public class BaseTest {
 	}
 
 	public WebDriver launchBrowser(String browser) {
-		prop = propobj.propFileReader(
-				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\QA_config.properties");
-		browser = prop.getProperty("browser");
+//		prop = propobj.propFileReader(
+//				System.getProperty("user.dir") + "\\src\\main\\resources\\envconfig\\QA_config.properties");
+//		browser = prop.getProperty("browser");
 
 		switch (browser) {
 		case "chrome":

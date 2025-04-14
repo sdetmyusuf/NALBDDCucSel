@@ -1,5 +1,6 @@
 package stepshelper;
 
+import apis.ArrayApis;
 import apis.BooksApis;
 import apis.UserApis;
 import basepackage.BaseTest;
@@ -37,6 +38,7 @@ public class StepInitialization {
 	public static AORegister aORegister = null;
 	public static BooksApis booksApis = null;
 	public static BrokenLinksChecker brokenLinksChecker = null;
+	public static ArrayApis arrayApis = null;
 
 	@Before
 	public void beforeMethod() {
@@ -55,6 +57,7 @@ public class StepInitialization {
 		aORegister = new AORegister(base);
 		booksApis = new BooksApis();
 		brokenLinksChecker = new BrokenLinksChecker(base);
+		arrayApis = new ArrayApis();
 	}
 
 }
