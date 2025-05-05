@@ -1,0 +1,8 @@
+{
+    "password": "securepassword123",
+    "newKey": "New Value",
+    "last_name": "Doe",
+    "first_name": "John",
+    "email": "john.doe@example.com",
+    "username": "john-doe"
+}

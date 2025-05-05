@@ -10,11 +10,13 @@ import pageobjects.AORegister;
 import pageobjects.BrokenLinksChecker;
 import pageobjects.CartPageObjects;
 import pageobjects.GmailInboxObjects;
+import pageobjects.GuruNitetyNinePageObjects;
 import pageobjects.LoginPage;
 import pageobjects.LoginPageObjects;
 import pageobjects.MpThreesPageObjects;
 import pageobjects.ProjectSearchObjects;
 import pageobjects.PurchaseStoreWise;
+import pageobjects.RSAWindowChangeObjects;
 import pageobjects.RegisterPageObjects;
 import pageobjects.SubmitOpderObjects;
 import pageobjects.VegPurchaseObjects;
@@ -39,6 +41,8 @@ public class StepInitialization {
 	public static BooksApis booksApis = null;
 	public static BrokenLinksChecker brokenLinksChecker = null;
 	public static ArrayApis arrayApis = null;
+	public static RSAWindowChangeObjects rsaWindowChangeObjects = null;
+	public static GuruNitetyNinePageObjects guruNitetyNinePageObjects = null;
 
 	@Before
 	public void beforeMethod() {
@@ -58,6 +62,9 @@ public class StepInitialization {
 		booksApis = new BooksApis();
 		brokenLinksChecker = new BrokenLinksChecker(base);
 		arrayApis = new ArrayApis();
+		
+		rsaWindowChangeObjects = new RSAWindowChangeObjects(base);
+		guruNitetyNinePageObjects = new GuruNitetyNinePageObjects(base);
 	}
 
 }

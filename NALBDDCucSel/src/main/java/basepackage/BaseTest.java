@@ -352,7 +352,9 @@ public class BaseTest {
 
 
 	public void scrollToPElement(By xpath) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement element = driver.findElement(xpath);
+		element = wait.until(ExpectedConditions.visibilityOf(element));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
 	}
 
