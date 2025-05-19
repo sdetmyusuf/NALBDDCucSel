@@ -2,6 +2,7 @@ package stepshelper;
 
 import apis.ArrayApis;
 import apis.BooksApis;
+import apis.MoreApis;
 import apis.UserApis;
 import basepackage.BaseTest;
 import io.cucumber.java.Before;
@@ -43,6 +44,8 @@ public class StepInitialization {
 	public static ArrayApis arrayApis = null;
 	public static RSAWindowChangeObjects rsaWindowChangeObjects = null;
 	public static GuruNitetyNinePageObjects guruNitetyNinePageObjects = null;
+	public static MoreApis moreApis = null;
+	
 
 	@Before
 	public void beforeMethod() {
@@ -65,6 +68,7 @@ public class StepInitialization {
 		
 		rsaWindowChangeObjects = new RSAWindowChangeObjects(base);
 		guruNitetyNinePageObjects = new GuruNitetyNinePageObjects(base);
+		moreApis = new MoreApis();
 	}
 
 }

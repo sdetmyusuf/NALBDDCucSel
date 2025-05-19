@@ -1,5 +1,7 @@
 package apis;
 
+import java.util.List;
+
 import org.testng.Assert;
 
 import io.restassured.RestAssured;
@@ -29,14 +31,14 @@ public class BooksApis {
 		responceAsString = response.getBody().asString();
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
-		String titles = jsonPathEvaluator.get("books");
+		List<String> titles = jsonPathEvaluator.get("books");
 		System.out.println("===========>>> "+titles);
 
 	}
 	
 	public void verifyStatusCode () {
 		
-		Assert.assertEquals(statsCode, 200);
+		Assert.assertEquals(statsCode, 200, "The status code is not matching");
 	}
 	
 	public void checkTitleForISBN (String isbn) {
